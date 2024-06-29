@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 
 class ChatPage extends StatefulWidget {
@@ -13,11 +15,14 @@ class ChatPage extends StatefulWidget {
   final String title;
 
   @override
+  // ignore: library_private_types_in_public_api
   _ChatPageState createState() => _ChatPageState();
 }
 
 class _ChatPageState extends State<ChatPage> {
+  // ignore: prefer_final_fields
   double _separation = 12;
+  // ignore: prefer_final_fields
   TextEditingController _controllerText = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -35,10 +40,10 @@ class _ChatPageState extends State<ChatPage> {
           Container()
         ]),
         actions: [
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
-          Icon(
+          const Icon(
             Icons.more_vert,
             size: 35,
           ),
@@ -74,7 +79,7 @@ class _ChatPageState extends State<ChatPage> {
           ),
           Text(
             message,
-            style: TextStyle(fontSize: 25),
+            style: const TextStyle(fontSize: 25),
           ),
           Container(width: 35),
           Column(
@@ -83,12 +88,12 @@ class _ChatPageState extends State<ChatPage> {
               Row(
                 children: [
                   Container(height: 25),
-                  Text(
+                  const Text(
                     "16:15",
                     style: TextStyle(fontSize: 15),
                   ),
                   Container(height: 25),
-                  Icon(Icons.check),
+                  const Icon(Icons.check),
                   Container(height: 15),
                 ],
               ),
@@ -114,7 +119,7 @@ class _ChatPageState extends State<ChatPage> {
           ),
           Text(
             message,
-            style: TextStyle(fontSize: 25),
+            style: const TextStyle(fontSize: 25),
           ),
           Container(width: 35),
           Column(
@@ -125,12 +130,12 @@ class _ChatPageState extends State<ChatPage> {
               Row(
                 children: [
                   Container(height: 25),
-                  Text(
+                  const Text(
                     "16:15",
                     style: TextStyle(fontSize: 15),
                   ),
                   Container(height: 25),
-                  Icon(Icons.check),
+                  const Icon(Icons.check),
                   Container(height: 15),
                 ],
               ),
@@ -144,47 +149,48 @@ class _ChatPageState extends State<ChatPage> {
   Widget bottomBarTextInput() {
     return Container(
         width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(color: Colors.white38),
+        decoration: const BoxDecoration(color: Colors.white38),
         child: Row(
           children: [
             Container(
               width: 10,
             ),
-            Icon(Icons.emoji_emotions_outlined),
+            const Icon(Icons.emoji_emotions_outlined),
             Container(
               width: 10,
             ),
+            // ignore: sized_box_for_whitespace
             Container(
                 height: 50,
                 width: 250,
                 child: TextField(
-                  decoration: InputDecoration(hintText: "Message"),
+                  decoration: const InputDecoration(hintText: "Message"),
                   controller: _controllerText,
                   keyboardType: TextInputType.text,
                 )),
-            Spacer(),
-            Icon(
+            const Spacer(),
+            const Icon(
               Icons.add_box_outlined,
               size: 30,
             ),
-            Spacer(),
-            Icon(
+            const Spacer(),
+            const Icon(
               Icons.file_present,
               size: 30,
             ),
-            Spacer(),
-            Icon(
+            const Spacer(),
+            const Icon(
               Icons.mic_none_outlined,
               size: 30,
             ),
-            Spacer(),
+            const Spacer(),
           ],
         ));
   }
 
   Widget appBody() {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/p4.jpg"),
           fit: BoxFit.cover,
@@ -200,7 +206,7 @@ class _ChatPageState extends State<ChatPage> {
             height: _separation,
           ),
           contactMessage(message: "how are you?"),
-          Spacer(),
+          const Spacer(),
           //bottomBarTextInput()
         ],
       ) /* add child content here */,

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class SettingsPage extends StatefulWidget {
+  const SettingsPage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _SettingsPageState createState() => _SettingsPageState();
 }
 
@@ -13,20 +16,20 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Settings'),
+        title: const Text('Settings'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             child: Text(
               'Notifications',
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.headlineLarge,
             ),
           ),
           SwitchListTile(
-            title: Text('Enable Notifications'),
+            title: const Text('Enable Notifications'),
             value: _isNotificationsEnabled,
             onChanged: (bool value) {
               setState(() {
@@ -35,14 +38,14 @@ class _SettingsPageState extends State<SettingsPage> {
             },
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             child: Text(
               'Appearance',
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
           ),
           SwitchListTile(
-            title: Text('Dark Mode'),
+            title: const Text('Dark Mode'),
             value: _isDarkModeEnabled,
             onChanged: (bool value) {
               setState(() {

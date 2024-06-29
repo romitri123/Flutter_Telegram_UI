@@ -7,12 +7,15 @@ class Contact {
   Contact({required this.name, required this.phoneNumber});
 }
 
+// ignore: use_key_in_widget_constructors
 class ContactsPage extends StatefulWidget {
   @override
+  // ignore: library_private_types_in_public_api
   _ContactsPageState createState() => _ContactsPageState();
 }
 
 class _ContactsPageState extends State<ContactsPage> {
+  // ignore: prefer_final_fields
   List<Contact> _contacts = [
     Contact(name: 'Ichigo Kurosaki', phoneNumber: '9898989898'),
     Contact(name: 'Jignesh', phoneNumber: '9797979797'),
@@ -23,7 +26,7 @@ class _ContactsPageState extends State<ContactsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Contacts'),
+        title: const Text('Contacts'),
       ),
       body: ListView.builder(
         itemCount: _contacts.length,
@@ -42,7 +45,7 @@ class _ContactsPageState extends State<ContactsPage> {
         onPressed: () {
           // Add new contact
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

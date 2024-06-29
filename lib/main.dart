@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:telegram_ui/pages/home.dart';
 import 'package:telegram_ui/pages/login.dart';

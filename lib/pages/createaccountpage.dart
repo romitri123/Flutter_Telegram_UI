@@ -1,23 +1,29 @@
 import 'package:flutter/material.dart';
+// ignore: unnecessary_import
 import 'package:flutter/services.dart';
 import 'package:telegram_ui/pages/login.dart';
 
+// ignore: use_key_in_widget_constructors
 class CreateAccountPage extends StatefulWidget {
   @override
+  // ignore: library_private_types_in_public_api
   _CreateAccountPageState createState() => _CreateAccountPageState();
 }
 
 class _CreateAccountPageState extends State<CreateAccountPage> {
   final _formKey = GlobalKey<FormState>();
+  // ignore: unused_field
   String _name = '';
+  // ignore: unused_field
   String _phoneNumber = '';
+  // ignore: unused_field
   String _password = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Telegram'),
+        title: const Text('Telegram'),
         centerTitle: true,
       ),
       body: Padding(
@@ -35,10 +41,10 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               TextFormField(
                 keyboardType: TextInputType.text,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Name',
                   hintText: 'Enter your name',
                 ),
@@ -52,10 +58,10 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                   _name = value!;
                 },
               ),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               TextFormField(
                 keyboardType: TextInputType.phone,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Mobile Number',
                   hintText: 'Enter your mobile number',
                 ),
@@ -69,10 +75,10 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                   _phoneNumber = value!;
                 },
               ),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               TextFormField(
                 obscureText: true,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Password',
                   hintText: 'Enter your password',
                 ),
@@ -86,23 +92,23 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                   _password = value!;
                 },
               ),
-              SizedBox(height: 32.0),
+              const SizedBox(height: 32.0),
               TextButton(
-                child: Text('Create Account'),
+                child: const Text('Create Account'),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
-                    // TODO: Add your create account logic here
+                    //
                   }
                 },
               ),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               GestureDetector(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Login()));
+                      MaterialPageRoute(builder: (context) => const Login()));
                 },
-                child: Text(
+                child: const Text(
                   'Already have an account? Sign in',
                   textAlign: TextAlign.center,
                   style: TextStyle(

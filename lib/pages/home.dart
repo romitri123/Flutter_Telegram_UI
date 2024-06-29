@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:telegram_ui/pages/contactspage.dart';
+// ignore: unused_import
 import 'package:telegram_ui/pages/login.dart';
 import 'package:telegram_ui/pages/settingspage.dart';
 import 'package:telegram_ui/pages/profilesettingspage.dart';
@@ -8,6 +9,7 @@ class Home extends StatefulWidget {
   const Home({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _HomeState createState() => _HomeState();
 }
 
@@ -17,7 +19,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Color.fromRGBO(33, 150, 243, 1),
+        backgroundColor: const Color.fromRGBO(33, 150, 243, 1),
         title: const Text(
           "Telegram",
           style: TextStyle(
@@ -78,9 +80,9 @@ class _HomeState extends State<Home> {
                       const SizedBox(
                         height: 5,
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
+                        children: [
                           Text(
                             "+91 8691945696",
                             style: TextStyle(
@@ -102,21 +104,21 @@ class _HomeState extends State<Home> {
             TextButton(
               onPressed: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Home()));
+                    context, MaterialPageRoute(builder: (context) => const Home()));
               },
               child: tile(msg: "New Group", im: Icons.people),
             ),
             TextButton(
               onPressed: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Home()));
+                    context, MaterialPageRoute(builder: (context) => const Home()));
               },
               child: tile(msg: "New Secret Chat", im: Icons.lock),
             ),
             TextButton(
               onPressed: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Home()));
+                    context, MaterialPageRoute(builder: (context) => const Home()));
               },
               child: tile(
                   msg: "New Broadcast List", im: Icons.speaker_phone_outlined),
@@ -134,21 +136,21 @@ class _HomeState extends State<Home> {
             TextButton(
               onPressed: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Home()));
+                    context, MaterialPageRoute(builder: (context) => const Home()));
               },
               child: tile(msg: "Theming", im: Icons.format_paint),
             ),
             TextButton(
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SettingsPage()));
+                    MaterialPageRoute(builder: (context) => const SettingsPage()));
               },
               child: tile(msg: "Settings", im: Icons.settings),
             ),
             TextButton(
               onPressed: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Home()));
+                    context, MaterialPageRoute(builder: (context) => const Home()));
               },
               child: tile(msg: "Telegram FAQ", im: Icons.question_answer),
             ),
@@ -234,7 +236,8 @@ class _HomeState extends State<Home> {
           // const Divider(height: 0.2,),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: const FloatingActionButton(
+          // ignore: sort_child_properties_last
           child: Icon(
             Icons.create,
             color: Colors.white,

@@ -6,6 +6,7 @@ class Login extends StatefulWidget {
   const Login({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _LoginState createState() => _LoginState();
 }
 
@@ -16,13 +17,13 @@ class _LoginState extends State<Login> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Telegram'),
+          title: const Text('Telegram'),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'Login',
               style: TextStyle(
                   fontSize: 35,
@@ -40,7 +41,7 @@ class _LoginState extends State<Login> {
                         keyboardType: TextInputType.number,
                         inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                         maxLength: 10,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'Phone',
                           hintText: 'Enter Phone Number',
                           prefixIcon: Icon(Icons.phone_android),
@@ -54,7 +55,7 @@ class _LoginState extends State<Login> {
                         },
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     Padding(
@@ -62,7 +63,7 @@ class _LoginState extends State<Login> {
                       child: TextFormField(
                         keyboardType: TextInputType.visiblePassword,
                         obscureText: true,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           labelText: 'Password',
                           hintText: 'Enter Password',
                           prefixIcon: Icon(Icons.password),
@@ -76,7 +77,7 @@ class _LoginState extends State<Login> {
                         },
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     Padding(
@@ -85,9 +86,10 @@ class _LoginState extends State<Login> {
                         minWidth: double.infinity,
                         onPressed: () {
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => Home()));
+                              MaterialPageRoute(builder: (context) => const Home()));
                         },
-                        child: Text('Login'),
+                        // ignore: sort_child_properties_last
+                        child: const Text('Login'),
                         color: Colors.lightBlueAccent,
                         textColor: Colors.white,
                       ),
